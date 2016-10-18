@@ -1,0 +1,48 @@
+package ru.innopolis.course;
+
+import ru.innopolis.course.entity.Car;
+import ru.innopolis.course.entity.Customer;
+import ru.innopolis.course.entity.Order;
+
+import java.net.SocketOption;
+import java.util.*;
+
+public class Main {
+
+	private Map<Order, Car> orderRegistry=createRegestry();
+	private Set<Car> carSet = createCarSet();
+
+	private Set<Car> createCarSet() {
+		return new HashSet<>();
+	}
+
+	private Map<Order,Car> createRegestry() {
+		return new HashMap<>();
+	}
+
+	public static void main (String[] args ){
+		Main main  = new Main();
+		Car vesta1= new Car ("Lada Vesta"),
+				vesta2= new Car ("Lada Kalina"), vesta3= new Car ("Lada Samara");
+		main.carSet.add (vesta1);
+		main.carSet.add (vesta2);
+		main.carSet.add (vesta3);
+
+
+		Iterator<Car> carIterator = main.carSet.iterator();
+		while (carIterator.hasNext()) {
+			System.out.println(carIterator.next().getModel()); //getmodel
+		}
+		System.out.println( "А теперь для цикла FOR:");
+
+		
+		for (Car car:main.carSet) {
+			System.out.println(car.getModel());
+		}
+
+		Iterable <Car> i = null;
+
+		System.out.println("Success");
+ 	}
+
+}

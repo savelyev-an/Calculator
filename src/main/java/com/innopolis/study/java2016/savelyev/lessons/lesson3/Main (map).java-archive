@@ -1,0 +1,37 @@
+package ru.innopolis.course;
+
+import ru.innopolis.course.entity.Car;
+import ru.innopolis.course.entity.Customer;
+import ru.innopolis.course.entity.Order;
+
+import java.net.SocketOption;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+
+	Map<Order, Car> orderRegistry = createRegestry();
+
+	private Map<Order,Car> createRegestry() {
+		return new HashMap<>();
+	}
+
+	public static void main (String[] args ){
+		Main main  = new Main();
+		Customer johnConnor = new Customer("John", "Connor",18);
+
+		Order firstOrder = new Order (johnConnor);
+		Order secondOrder = new Order (johnConnor);
+
+		Car vesta = new Car ("Lada Vesta");
+
+		main.orderRegistry.put(firstOrder, vesta);
+
+		//johnConnor.setName("Sveta");
+
+		System.out.println(main.orderRegistry.get(firstOrder).getModel() );
+		System.out.println(main.orderRegistry.get(secondOrder).getModel() );
+
+ 	}
+
+}
