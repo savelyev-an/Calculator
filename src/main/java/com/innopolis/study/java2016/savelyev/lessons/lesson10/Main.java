@@ -12,6 +12,7 @@ public class Main {
 	public static void main(String[] args) throws ClassNotFoundException {
 //		LoggableClassLoader classLoader = new LoggableClassLoader(Main.class.getClassLoader());
 		LoggableClassLoader classLoader2 = new LoggableClassLoader(Main.getClassLoader());
+		System.out.println("Не просто так");
 
 		Class test = classLoader2.loadClass("DDD");
 	}
