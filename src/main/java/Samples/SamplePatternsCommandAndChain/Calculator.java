@@ -102,9 +102,6 @@ public class Calculator {
 		System.out.println("Прочитан конфиг, user_mask устновлен=>"+result );
 		userMask=result;
 	}
-
-
-
-
 }
+
 
